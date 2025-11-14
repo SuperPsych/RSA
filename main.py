@@ -1,5 +1,4 @@
 import random
-from math import gcd
 
 # some helpful number theory functions
 
@@ -39,6 +38,12 @@ def generate_random_prime(max_value: int = 1_000_000) -> int:
             if is_prime(candidate):
                 return candidate
             candidate += 2
+
+
+def gcd(a: int, b: int) -> int:
+    if a == 0:
+        return b
+    return gcd(b % a, a)
 
 
 def extended_gcd(a: int, b: int):
